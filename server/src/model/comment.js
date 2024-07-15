@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import User from "./user.js";
-const commentSchema=mongoose.Schema({
+const commentSchema=new mongoose.Schema({
     content:{
         type:String,
         required:true

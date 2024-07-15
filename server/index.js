@@ -10,6 +10,8 @@ import Blog from "./src/model/blog.js";
 // Initialize Express app
 const app = express();
 
+const blog = new Blog();
+
 // Load environment variables from .env file
 const PORT = process.env.PORT || 3000;
 const DB = process.env.MONGODB_HOST || 'mongodb://localhost:27017/blogDB';
@@ -45,7 +47,7 @@ const connectDB = async () => {
             // useUnifiedTopology: true   in newer versions of the driver.
         console.log("Connection to MongoDB successful");
     } catch (error) {
-        console.error("MongoDB connection error:", error);
+        console.error("MongoDB connection error: ", error);
         process.exit(1); // Exit process with failure
     }
 };

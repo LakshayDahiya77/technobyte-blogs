@@ -1,6 +1,5 @@
 import mongoose from 'mongoose'
-import Tag from './tags.js'
-import Comment from './comment.js';
+import Tag from './tag.js'
 const blogSchema=mongoose.Schema({
     title:{
         type:String,
@@ -29,6 +28,10 @@ const blogSchema=mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"Comment"
     }],
+    date: {
+        type: Date,
+        default: Date.now
+    }
 });
 const Blog=mongoose.model('Blog',blogSchema);
 
